@@ -25,6 +25,11 @@ namespace BinaryVisualizerWpf
         public MainWindow()
         {
             InitializeComponent();
+
+            SearchTextBox.KeyDown += (s, e) =>
+            {
+                if (e.Key == Key.Enter) SearchButton_Click(s, null);
+            };
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
