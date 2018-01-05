@@ -47,6 +47,7 @@ namespace BinaryVisualizerWpf
         private static readonly int RowLength = 16;
         private static readonly int TextWidth = 35;
         private static readonly int TextHeight = 35;
+        private static readonly int Offest = (int)(TextWidth * 1.5);
 
         private GridLabel _previousHexSelection;
         private GridLabel _previousCharSelection;
@@ -70,6 +71,12 @@ namespace BinaryVisualizerWpf
                     var hex = Convert.ToString(b, 16);
                     if (hex.Length == 1) hex = $"0{hex}";
                     
+                    if (cnt % RowLength == 0)
+                    {
+                        hexLabels.Add(BuildRowLabel(cnt));
+                        charLabels.Add(BuildRowLabel(cnt));
+                    }
+
                     var hexLabel = BuildGridLabel(cnt, $"{hex}", GridType.Hex);
                     hexLabels.Add(hexLabel);
 
@@ -93,6 +100,22 @@ namespace BinaryVisualizerWpf
             }
         }
 
+        private GridLabel BuildRowLabel(int index)
+        {
+            return new GridLabel(0, 0, GridType.RowLabel)
+            {
+                Content = Convert.ToString(index, 16),
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+                Margin = new Thickness(0, index / RowLength * TextHeight, 0, 0),
+                Width = TextWidth * 1.5,
+                Height = TextHeight + 5,
+                FontFamily = new FontFamily("monospace"),
+                FontSize = 24,
+                Foreground = Brushes.Gray
+            };
+        }
+
         private GridLabel BuildGridLabel(int index, string text, GridType gridType)
         {
             var label = new GridLabel(index % RowLength, index / RowLength, gridType)
@@ -100,7 +123,7 @@ namespace BinaryVisualizerWpf
                 Content = text,
                 HorizontalAlignment = HorizontalAlignment.Left,
                 VerticalAlignment = VerticalAlignment.Top,
-                Margin = new Thickness(index % RowLength * TextWidth, index / RowLength * TextHeight, 0, 0),
+                Margin = new Thickness(index % RowLength * TextWidth + Offest, index / RowLength * TextHeight, 0, 0),
                 Width = TextWidth + 5,
                 Height = TextHeight + 5,
                 FontFamily = new FontFamily("monospace"),
@@ -234,7 +257,8 @@ namespace BinaryVisualizerWpf
     internal enum GridType
     {
         Hex,
-        Char
+        Char,
+        RowLabel
     }
 
     public class GridLabel : Label
