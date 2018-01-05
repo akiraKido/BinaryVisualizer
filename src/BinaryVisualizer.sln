@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryVisualizer", "BinaryVisualizer\BinaryVisualizer.csproj", "{1723986A-0F43-42B4-8683-E85CB394622A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryVisualizerWpf", "BinaryVisualizerWpf\BinaryVisualizerWpf.csproj", "{1DD21CCA-C3B8-44C8-B9A6-C30557FF24DB}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1723986A-0F43-42B4-8683-E85CB394622A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1723986A-0F43-42B4-8683-E85CB394622A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1723986A-0F43-42B4-8683-E85CB394622A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1723986A-0F43-42B4-8683-E85CB394622A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1DD21CCA-C3B8-44C8-B9A6-C30557FF24DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1DD21CCA-C3B8-44C8-B9A6-C30557FF24DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DD21CCA-C3B8-44C8-B9A6-C30557FF24DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
