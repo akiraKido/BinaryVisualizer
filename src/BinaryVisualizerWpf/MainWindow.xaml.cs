@@ -110,6 +110,10 @@ namespace BinaryVisualizerWpf
             {
                 SelectLabel((GridLabel)s);
             };
+            label.ToolTip = new ToolTip()
+            {
+                Content = $"0x{Convert.ToString(index, 16)}"
+            };
             return label;
         }
 
