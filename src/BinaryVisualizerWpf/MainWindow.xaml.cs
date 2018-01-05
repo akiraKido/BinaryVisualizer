@@ -136,7 +136,7 @@ namespace BinaryVisualizerWpf
                     var hexSelection = GetPreviousSelectionAccordingTo(selection, _hexLabels);
                     if (hexSelection != null)
                     {
-                        _previousCharSelection = hexSelection;
+                        _previousHexSelection = hexSelection;
                         SetBackgroundColor(hexSelection, BackgroundTheme.Black);
                     }
                     break;
